@@ -5,61 +5,45 @@
 		<title></title>
 	</head>
 	<style>
-	    * {
-	        margin: 0;
-	        padding: 0;
-	    }
-	
-	    body {
-	        padding: 100px;
-	    }
-	
-	    textarea {
-	        width: 200px;
-	        height: 100px;
-	        border: 1px pink solid;
-	        /* 不设置轮廓 */
-	        outline: none;
-	        /* 设置其不能改变长宽 */
-	        resize: none;
-	    }
-	
-	    li {
-	        width: 300px;
-	        padding: 5px;
-	        background-color: #eee;
-	        font-size: 15px;
-	        margin: 15px 0;
-	    }
-	
-	    li a {
-	        float: right;
-	    }
+		div{
+			background-color:#55aa7f;
+			border: solid #55aa00;
+			overflow: hidden;
+			width: 100px;
+			height: 100px;
+			font-family: '宋体';
+			font-size: 28px;
+		}
 	</style>
 	<body>
-		<textarea></textarea>
-		<button>发布</button>
-		<ul></ul>
-	</body>
-	<script>
-		var text=document.querySelector('textarea');
-		var btn=document.querySelector('button');
-		var ul=document.querySelector('ul');
-		btn.onclick=function(){
-			if(text.value==''){
-				alert('您没有输入');
+		<p>柯柯</p>
+		<script>
+			var h= new Date().getHours();
+			if(h<6){
+				alert('凌晨好');
+				document.write('<div>凌晨好</div>');
+			}else if(h<9){
+				alert('早上好');
+				document.write('<div>早上好</div>');
+			}else if(h<12){
+				alert('上午好');
+				document.write('<div>上午好</div>');
+			}else if(h<14){
+				alert('中午好');
+				document.write('<div>中午好</div>');
+			}else if(h<17){
+				alert('下午好');
+				document.write('<div>下午好</div>');
+			}else if(h<19){
+				alert('傍晚好');
+				document.write('<div>傍晚好</div>');
+			}else if(h<22){
+				alert('晚上好');
+				document.write('<div>晚上好</div>');
 			}else{
-				var li=document.createElement('li');
-				li.innerHTML=text.value+"<a href='javascript:;'>删除</a> ";
-				text.value='';
-				ul.insertBefore(li,ul.children[0]);
-				var a=doucument.querySelectorAll('a');
-				for(var i=0;i<a.length;i++){
-					a[i].onclick=function(){
-						ul.removeChild(this.parentNode);
-					}
-				}
+				alert('夜里好');
+				document.write('<div>夜里好</div>');
 			}
-		}
-	</script>
+		</script>
+	</body>
 </html>
